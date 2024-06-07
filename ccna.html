@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCNA</title>
+    <style>
+        :root {
+            --direction: -45deg;
+            --gold: #b9f2ff;
+            --light-shadow: #b9f2ff;
+            --dark-shadow: #3e2904;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(45deg, rgba(0,212,255,1) 0%, rgba(11,3,45,1) 100%);
+        }
+
+        main {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-attachment: fixed;
+        }
+
+        .background, .foreground {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .background {
+            background-image: url('https://wallpaperaccess.com/full/5531743.jpg');
+        }
+
+        .foreground {
+            background-image: url('https://wallpaperaccess.com/full/5374040.jpg');
+            mask-image: linear-gradient(var(--direction), rgba(0,0,0,1) 40%, rgba(0,0,0,0) 60%);
+            mask-position: 50% 50%;
+        }
+
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Optional overlay */
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-areas: 'overlap';
+            place-content: center;
+            text-transform: uppercase;
+            height: 50vh;
+        }
+
+        .wrapper > div {
+            background-clip: text;  
+            -webkit-background-clip: text;
+            color: #363833;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 1000;
+            font-size: clamp(2em, 10vw, 10rem);
+            grid-area: overlap;    
+            letter-spacing: 1px;
+            -webkit-text-stroke: 4px transparent;
+        }
+
+        div.bg {
+            background-image: repeating-linear-gradient(105deg, var(--gold) 0%, var(--dark-shadow) 5%, var(--gold) 12%);
+            color: transparent;
+            filter: drop-shadow(5px 15px 15px black);
+            transform: scaleY(1.05);
+            transform-origin: top;
+        }
+
+        div.fg {
+            background-image: repeating-linear-gradient(5deg, var(--gold) 0%, var(--light-shadow) 23%, var(--gold) 31%);
+            color: #1e2127;
+            transform: scale(1);
+        }
+
+        h4{
+            font-family: 'Open Sans', sans-serif;
+            margin-bottom: 2px;
+            color: #ffffff;
+            padding: 4px;
+            text-align: center;
+             
+              
+        }
+        
+         p {
+         
+            font-family: 'Open Sans', sans-serif;
+            margin-bottom: 2px;
+            color: #ffffff;
+            padding: 4px;
+            text-align: center;
+            
+            
+        }
+
+        .container {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.25);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.125);  
+            padding: 20px;  
+            filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container .wrapper {
+            width: 60%;
+            height: 60%;
+        }
+         
+        .banner-image1 {
+            background-image: url('https://cdn.fs.teachablecdn.com/LvJ2AlDRl2eA41lf0JgA');
+            background-position: center center;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    max-width: 30%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.255);
+        }
+@media (max-width: 1024px) { /* Tablet and smaller laptop screens */
+    .banner-image1 {
+        height: 300px;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) { /* Smartphones */
+    .banner-image1 {
+        height: 200px;
+        max-width: 80%;
+    }
+}
+       .banner-image2 {
+    background-image: url('https://th.bing.com/th/id/OIP.LiVjxJSPIyTx2tLw9xdTZQHaHa?w=168&h=180&c=7&r=0&o=5&pid=1.7');
+    background-position: center center;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    max-width: 30%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.255);
+}
+
+@media (max-width: 1024px) { /* Tablet and smaller laptop screens */
+    .banner-image2 {
+        height: 300px;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) { /* Smartphones */
+    .banner-image2 {
+        height: 200px;
+        max-width: 80%;
+    }
+}
+.banner-image3 {
+    background-image: url('https://th.bing.com/th/id/R.b3f64aaeb9ad92a2b2012d2e5324a686?rik=rb14yGjwompIvw&pid=ImgRaw&r=0');
+    background-position: center center;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    max-width: 30%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.255);
+}
+
+@media (max-width: 1024px) { /* Tablet and smaller laptop screens */
+    .banner-image3 {
+        height: 300px;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) { /* Smartphones */
+    .banner-image3 {
+        height: 200px;
+        max-width: 80%;
+    }
+}
+        
+
+        h1 {
+            font-family: 'Righteous', sans-serif;
+            color: rgba(255,255,255,0.98);
+            text-transform: uppercase;
+            font-size: 2.4rem;
+           
+        }
+
+        .button-wrapper {
+            margin-top: 18px;
+        }
+
+        .btn {
+            border: none;
+            padding: 12px 24px;
+            border-radius: 24px;
+            font-size: 12px;
+            font-size: 0.8rem;  
+            letter-spacing: 2px;  
+            cursor: pointer;
+        }
+
+        .btn + .btn {
+            margin-left: 10px;
+        }
+
+      
+
+        .outline:hover {
+            transform: scale(1.125);
+            color: rgba(255, 255, 255, 0.9);
+            border-color: rgba(255, 255, 255, 0.9);
+            transition: all .3s ease;  
+        }
+
+        .fill {
+            background: rgba(0, 212, 255, 0.9);
+            color: rgba(255,255,255,0.95);
+            filter: drop-shadow(0);
+            font-weight: bold;
+            transition: all .3s ease; 
+        }
+
+        .fill:hover {
+            transform: scale(1.125);  
+            border-color: rgba(255, 255, 255, 0.9);
+            filter: drop-shadow(0 10px 5px rgba(0,0,0,0.125));
+            transition: all .3s ease;    
+        }
+       
+
+
+
+/* New style for the powered-by text */
+.powered-by {
+    font-size: 0.98em; /* Smaller font size */
+    color: #555; /* A shade of gray for the text color */
+    text-align: center; /* Centers the text */
+    margin-top: 0.1px; /* Adds some space above the text */
+}
+    </style>
+</head>
+<body>
+  
+    <main>
+        <div class="background"></div>     
+        <div class="foreground"></div>
+    </main>
+
+    <header>
+        <div class="overlay">
+       
+            <div class="wrapper">
+            
+                <div class="bg">CCNA</div>
+                <div class="fg">CCNA</div>
+                
+            </div>
+            <div class="powered-by">&copy;Designed by Amer Alghanem</div>
+            <p>The Cisco Certified Network Associate (CCNA) certification is an entry-level credential that validates a professional's ability to install, configure, operate, and troubleshoot medium-sized routed and switched networks. It covers essential networking concepts such as IP addressing, LAN/WAN technologies, routing protocols, network security, and infrastructure services. The CCNA is widely recognized in the IT industry, serving as a foundational certification for networking careers and a prerequisite for more advanced Cisco certifications.</p>
+            
+             
+           
+            
+            
+            <div class="card-container">
+            <divs style="padding: 120px;"></div>
+            <!--------------------------------------------------------------------------------------------------------------------------------------->
+                <div class="container" >
+                <h1 > Jeremy's IT Lab </h1>
+                        <p > This channel is for people looking to learn about Cisco networking, and networking in general.<br/>
+                            Completed projects: Complete CCNA 200-301 Course, Complete CCNA Routing & Switching Packet Tracer Lab Series.</p>
+                  
+                   
+                    <div class="banner-image1" ></div>
+                    
+                    <div class="button-wrapper"> 
+                        <button onclick="window.location.href='https://www.youtube.com/@JeremysITLab'" class="btn fill" > Jeremy's channel</button> </br> </br>
+                        <button onclick="window.location.href='https://www.jeremysitlab.com/'" class="btn fill">Jeremy's website</button>
+                    </div>
+                </div>
+ <!--------------------------------------------------------------------------------------------------------------------------------------->
+                <div class="container">
+                <h1> III-Networking (FOR sijad) </h1>
+                        <p>This channel is for arabic and english meterial in networking specially and networking in general ,<br/>
+                            And this channel is perfect for stuends want to pass ccna exam .</p>
+                    <div class="banner-image2"></div>
+                        
+                    <div class="button-wrapper"> 
+                        <button onclick="window.location.href='https://www.youtube.com/@IIINetworking/playlists'" class="btn fill"> sijad channel </button>
+                        <button onclick="window.location.href='https://iiinetworking.com/'"  class="btn fill" > sijad website</button>
+                    </div>
+                </div>
+ <!--------------------------------------------------------------------------------------------------------------------------------------->
+                <div class="container">
+                 <h1>ABEER HOSNI </h1>
+                       <p>This channel is for only arabic meterial in networking specially "CCNA" ,<br/>
+                            And this channel is perfect for stuends want to pass ccna exam but (it's old )  .</p>
+                
+                    <div class="banner-image3" > </div>
+                        
+                    <div class="button-wrapper"> 
+                        <button onclick="window.location.href='https://youtube.com/@abeerhosni?si=EOIdqzZPmo3sYIPT'" class="btn fill"> ABEER channel </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </header>
+    
+  
+     
+ <!--------------------------------------------------------------------------------------------------------------------------------------->
+    <script>
+        let c = 45;
+
+        function draw() {
+            document.documentElement.style.setProperty('--direction', c++ + 'deg');
+            requestAnimationFrame(draw);
+        }
+
+        requestAnimationFrame(draw);
+    </script>
+</body>
+</html>
