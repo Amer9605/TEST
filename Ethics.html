@@ -25,6 +25,7 @@
     }
     body {
       font-family: 'Fantasy', Fantasy;
+
       background-color: transparent;
       color: white;
       padding: 20px;
@@ -150,103 +151,101 @@
       }
     }
   </style>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-  <script>
-    var firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_AUTH_DOMAIN",
-      databaseURL: "YOUR_DATABASE_URL",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_STORAGE_BUCKET",
-      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-      appId: "YOUR_APP_ID"
-    };
-    firebase.initializeApp(firebaseConfig);
-  </script>
 </head>
 <body>
   <div class="content">
     <h1>Ethics Course</h1>
     <p>Welcome to the Ethics course. Here you will find various resources to help you learn Ethics concepts.</p>
-    <div class="resources" id="resources"></div>
-    <div class="admin">
-      <h2>Add New Resource</h2>
-      <form id="resourceForm">
-        <div class="form-group">
-          <label for="section">Section</label>
-          <select class="form-control" id="section">
-            <option value="introduction">Introduction</option>
-            <option value="pdfs">PDF's</option>
-            <option value="qs_and_past_years">QS & Past Years</option>
-          </select>
+    <div class="resources">
+    
+    <!------------------------------------------------------>
+    
+      <h2>INTRODUCTION</h2>
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="IwZXh0bgNhZW0CMTAAAR0b3G0yaxGpzE8A2GD6QKIKAlM1vjvzmwvJEcaKXilTWbFpiqayOyOBHiM_aem_AcRmj1fd3wYlAJyoOybCSDKWhNP4J_oH0KsLAzN2BZrn3RYuTxYVhnJyJ0WUksU3nTxIbKp9" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">الكتاب</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">PDF</div>
+            </div>
+          </a>
         </div>
-        <div class="form-group">
-          <label for="title">Title</label>
-          <input type="text" class="form-control" id="title" required>
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1t4m0WtNEjp56DkSDtdDq1kdH3kzL8Acu?fbclid=IwZXh0bgNhZW0CMTAAAR3DfpEjl-tQapFSOb33ziRFb1N74BjIKRX0BkSc6DB34FHD4a29NIntoxU_aem_AcT5GE24_4GCFxV0lMtxU304PL9pwVFmSTJPDhErjkfKt6ZJcrcvB8xTG4ftcDxn_mdzhfdpxe7fP2_tKEkAXXMs" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">السلايدات </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">PDF</div>
+            </div>
+          </a>
         </div>
-        <div class="form-group">
-          <label for="url">URL</label>
-          <input type="url" class="form-control" id="url" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Add Resource</button>
-      </form>
-    </div>
-  </div>
-  <script>
-    document.getElementById('resourceForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var section = document.getElementById('section').value;
-      var title = document.getElementById('title').value;
-      var url = document.getElementById('url').value;
-
-      var newResource = {
-        title: title,
-        url: url,
-        type: section
-      };
-
-      firebase.database().ref(section).push(newResource)
-        .then(() => {
-          alert('Resource added successfully!');
-          document.getElementById('resourceForm').reset();
-        })
-        .catch(error => {
-          console.error('Error adding resource:', error);
-        });
-    });
-
-    fetch('resources.json')
-      .then(response => response.json())
-      .then(data => {
-        const resourcesDiv = document.getElementById('resources');
+      </div>
+      
+      <!------------------------------------------------------>
+      
+    
         
-        const createSection = (title, resources) => {
-          const section = document.createElement('div');
-          section.innerHTML = `<h2>${title}</h2><div class="ag-courses_box"></div>`;
-          const box = section.querySelector('.ag-courses_box');
-          resources.forEach(resource => {
-            const item = document.createElement('div');
-            item.classList.add('ag-courses_item');
-            item.innerHTML = `
-              <a href="${resource.url}" target="_blank" class="ag-courses-item_link">
-                <div class="ag-courses-item_bg"></div>
-                <div class="ag-courses-item_title">${resource.title}</div>
-                <div class="ag-courses-item_date-box">
-                  <div class="ag-courses-item_date">${resource.type}</div>
-                </div>
-              </a>
-            `;
-            box.appendChild(item);
-          });
-          resourcesDiv.appendChild(section);
-        };
-
-        createSection('INTRODUCTION', data.introduction);
-        createSection('PDF\'S', data.pdfs);
-        createSection('QS & PAST YEARS', data.qs_and_past_years);
-      })
-      .catch(error => console.error('Error loading resources:', error));
-  </script>
+      <!------------------------------------------------------>
+      
+       
+      <h2>PDF'S</h2>
+      
+      
+      <div class="ag-courses_box">
+      
+      
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/11iZF6mq2zzxEJ-Eg4eaYb4MMxHM0ZBPg?fbclid=IwZXh0bgNhZW0CMTAAAR352Z_Vv0JCeu3YvnB5lgrLyINbnN5sVJ5ECUCmSlOnk3G77TfIHUTauL0_aem_AcSCzc2JMUF_Ou1kGngNZtEQg8FzlMeKNJq2zGJqkgo11dkWdyCdOcwDWfo1VsZ3KMu6f_siNZE9mwRmmi4UWS82" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">  السلايدات (ترجمة  تالا ابو دحيس )  </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">PDF</div>
+            </div>
+          </a>
+        </div>
+        
+        
+        
+        
+      </div>
+      
+ <!------------------------------------------------------>
+ 
+      
+        <h2>QS & BAST YEARS</h2>
+        
+        
+        
+      <div class="ag-courses_box">
+      
+      
+      
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1oU_5gqCdrbikDHViYd8IzpGbh8aJSACP?fbclid=IwZXh0bgNhZW0CMTAAAR23zIk8aGY9o05N1-yOnI4pHl5zAWIGGaOmtqZ0lYNH2-ya9JPltmIT3_0_aem_AcRq5SdMwdCa7N_tVuj5ebVEG6nH7NP36nRfT8uLqLUQLNE8aWLQwSb_IC6XMpcWlnjWahv4cRDqOAsllBPxdXM7" class="ag-courses-item_link" >
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> سنوات</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1l_AO9Utaepih2HvIrlP7UEY4vSOTeuiQ?fbclid=IwZXh0bgNhZW0CMTAAAR0ENsY_WQYSyyOv4rWA80k4eIAAQu_oPdEKVfRtNuObjygIr5GSMkVILz0_aem_AcRdQI86-_3Q1ROExjTBXWXXRJ1RhWzTOqTYHXg6mQqEznKL47QG3siR8fqrVwmrePj67ZmphRQvTy5BLjNGeOst" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">كويزين على شابتر 1+2</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+        
+      </div>
+      
+    
+    
+  </div>
+  </div>
 </body>
 </html>
