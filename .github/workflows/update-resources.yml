@@ -1,0 +1,34 @@
+name: Update Resources
+
+on:
+  issues:
+    types: [opened]
+  discussion:
+    types: [created]
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Update resources.json
+        run: |
+          ISSUE_TITLE=$(jq -r '.issue.title' "$GITHUB_EVENT_PATH")
+          ISSUE_BODY=$(jq -r '.issue.body' "$GITHUB_EVENT_PATH")
+          SECTION=$(echo "$ISSUE_BODY" | grep -oP '(?<=Section: ).*')
+          URL=$(echo "$ISSUE_BODY" | grep -oP '(?<=URL: ).*')
+          TITLE=$(echo "$ISSUE_BODY" | grep -oP '(?<=Title: ).*')
+
+          jq --arg section "$SECTION" --arg url "$URL" --arg title "$TITLE" \
+            '.[$section] += [{"title": $title, "url": $url, "type": "PDF"}]' resources.json > resources_tmp.json
+          mv resources_tmp.json resources.json
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add resources.json
+          git commit -m 'Update resources.json with new resource'
+          git push
